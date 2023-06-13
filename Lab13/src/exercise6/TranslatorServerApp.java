@@ -15,7 +15,7 @@ public class TranslatorServerApp {
 				new String[] {"صباح الخير","طاب مساؤك","كيف حالك؟","شكرا لك","مع السالمة","ما أخبارك؟"},
 				new String[] {"좋은 아침","안녕히 주무세요","어떻게 지내세요?","감사합니다","안녕","뭐야?"}
 		}; 
-		String []textEng = {"good morning","good night","gow are you?","thank you","goodbye ","what’s up?"};  
+		String []textEng = {"good morning","good night","gow are you?","thank you","goodbye","what’s up?"};  
 
 		// Binding to a port or any other port no you are fancy of
 		int portNo = 4228;
@@ -44,8 +44,7 @@ public class TranslatorServerApp {
 			//find matches in english list
 			requestString = requestString.toLowerCase();
 			String response = "";
-			for(int index=0; index < translations[languageIndex].length;index++) {
-				System.out.println("loop");
+			for(int index=0; index < translations[languageIndex].length;index++) { 
 
 				//break and assign match to response
 				if(requestString.equals(textEng[index])) {

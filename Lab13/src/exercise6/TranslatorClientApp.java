@@ -12,20 +12,18 @@ public class TranslatorClientApp {
 
 	public static void main(String [] args) {
 
+		Scanner scanner =  new Scanner(System.in);
 		while(true) {
 
 			System.out.println("Insert text:");
 
-			Scanner scanner =  new Scanner(System.in);
 			String input = scanner.nextLine();
 
 			System.out.println("\nSelect target language:\n1)Bahasa Malaysia\n2)Arabic\n3)Korean\n4)exit");
 			int languageId = scanner.nextInt() -1;
 			if(languageId == 3)
 				break;
-
-			scanner.close();
-			
+ 
 			Socket socket;
 			try {
 				socket = new Socket(InetAddress.getLocalHost(), 4228);
@@ -52,5 +50,6 @@ public class TranslatorClientApp {
 				e1.printStackTrace();
 			} 
 		}
+		scanner.close();
 	}
 }
